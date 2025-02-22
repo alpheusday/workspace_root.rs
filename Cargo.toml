@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+members = [
+    "__test__",
+    "package",
+]
+
+[workspace.dependencies]
+async-std = "^1.13.0"
+
+[workspace.dependencies.workspace_root]
+path = "./package"
+features = ["all"]

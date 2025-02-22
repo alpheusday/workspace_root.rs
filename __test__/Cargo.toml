@@ -1,0 +1,9 @@
+[package]
+name = "__test__"
+edition = "2021"
+publish = false
+
+[dependencies]
+async-std = { workspace = true }
+tokio = { version = "^1.43.0", features = ["macros", "rt"] }
+workspace_root = { workspace = true }

@@ -1,0 +1,55 @@
+[package]
+name = "workspace_root"
+version = "0.1.0"
+authors = ["Alpheus Tang"]
+edition = "2024"
+rust-version = "1.85.0"
+description = """
+An utility to get workspace root
+"""
+readme = "README.md"
+homepage = "https://github.com/alpheustangs/workspace_root.rs"
+repository = "https://github.com/alpheustangs/workspace_root.rs"
+license = "MIT"
+keywords = [
+    "get",
+    "workspace",
+    "root",
+    "fs",
+    "util",
+]
+categories = [
+    "filesystem"
+]
+include = [
+    "src/*", 
+    "Cargo.toml",
+    "README.md",
+]
+
+[package.metadata.docs.rs]
+features = ["all"]
+
+[lib]
+name = "workspace_root"
+path = "src/lib.rs"
+
+[dependencies.get_dir]
+version = "~0.4.0"
+optional = true
+
+[dependencies.async-std]
+workspace = true
+optional = true
+
+[dependencies.tokio]
+version = "^1.43.0"
+optional = true
+features = ["fs", "io-util"]
+
+[features]
+default = ["get_dir"]
+async-std = ["dep:async-std", "get_dir/async-std"]
+async_std = ["async-std"]
+tokio = ["dep:tokio", "get_dir/tokio"]
+all = ["async-std", "tokio"]
