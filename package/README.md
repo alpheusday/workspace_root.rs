@@ -21,7 +21,7 @@ Async version also available with `async-std`/`async_std` and `tokio` features:
 ```rust
 // This is a `async-std` example
 
-use std::path::PathBuf;
+use async_std::path::PathBuf;
 
 use workspace_root::async_std::get_workspace_root_async;
 
