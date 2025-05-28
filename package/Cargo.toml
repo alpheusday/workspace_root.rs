@@ -1,15 +1,15 @@
 [package]
 name = "workspace_root"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Alpheus Tang"]
 edition = "2024"
 rust-version = "1.85.0"
 description = """
-An utility to get workspace root
+A utility to get workspace root
 """
 readme = "README.md"
-homepage = "https://github.com/alpheus-day/workspace_root.rs"
-repository = "https://github.com/alpheus-day/workspace_root.rs"
+homepage = "https://github.com/alpheusday/workspace_root.rs"
+repository = "https://github.com/alpheusday/workspace_root.rs"
 license = "MIT"
 keywords = [
     "get",
@@ -30,10 +30,6 @@ include = [
 [package.metadata.docs.rs]
 features = ["all"]
 
-[lib]
-name = "workspace_root"
-path = "src/lib.rs"
-
 [dependencies.async-std]
 workspace = true
 optional = true
@@ -44,12 +40,12 @@ optional = true
 features = ["fs", "io-util"]
 
 [dependencies.get_dir]
-version = "~0.4.0"
+version = "~0.4.3"
 optional = true
 
 [features]
 default = ["get_dir"]
-async-std = ["dep:async-std", "get_dir/async-std"]
-async_std = ["async-std"]
+async_std = ["dep:async-std", "get_dir/async-std"]
+async-std = ["async_std"]
 tokio = ["dep:tokio", "get_dir/tokio"]
-all = ["async-std", "tokio"]
+all = ["async_std", "tokio"]

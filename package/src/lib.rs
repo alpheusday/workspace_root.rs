@@ -1,6 +1,6 @@
 //! # Workspace Root
 //!
-//! An utility to get workspace root.
+//! A utility to get workspace root.
 //!
 //! The functions will try to get the workspace root by searching for the `Cargo.lock` file.
 //! Then it will return the directory that contains the file.
@@ -18,10 +18,10 @@
 //! let root: PathBuf = get_workspace_root();
 //! ```
 //!
-//! Async version also available with `async-std`/`async_std` and `tokio` features:
+//! Async version also available with `async_std` and `tokio` features:
 //!
 //! ```no_run
-//! // This is a `async-std` example
+//! // This is a `async_std` example
 //!
 //! use async_std::path::PathBuf;
 //!
@@ -44,15 +44,15 @@
 //! # }
 //! ```
 
-/// Async functions available with `async-std`/`async_std` feature.
+/// Async functions available with `async_std` feature.
 ///
 /// To use it, add the following code to the `Cargo.toml` file:
 ///
 /// ```toml
 /// [dependencies]
-/// workspace_root = { version = "*", features = ["async-std"] }
+/// workspace_root = { version = "*", features = ["async_std"] }
 /// ```
-#[cfg(feature = "async-std")]
+#[cfg(feature = "async_std")]
 pub mod async_std;
 
 /// Async functions available with `tokio` feature.

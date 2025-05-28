@@ -1,6 +1,6 @@
 # Workspace Root
 
-An utility to get workspace root.
+A utility to get workspace root.
 
 The functions will try to get the workspace root by searching for the `Cargo.lock` file. Then it will return the directory that contains the file. If the file is not found, an error will be returned instead.
 
@@ -16,10 +16,10 @@ use workspace_root::get_workspace_root;
 let root: PathBuf = get_workspace_root();
 ```
 
-Async version also available with `async-std`/`async_std` and `tokio` features:
+Async version also available with `async_std` and `tokio` features:
 
 ```rust
-// This is a `async-std` example
+// This is a `async_std` example
 
 use async_std::path::PathBuf;
 
