@@ -8,8 +8,8 @@ description = """
 An utility to get workspace root
 """
 readme = "README.md"
-homepage = "https://github.com/alpheustangs/workspace_root.rs"
-repository = "https://github.com/alpheustangs/workspace_root.rs"
+homepage = "https://github.com/alpheus-day/workspace_root.rs"
+repository = "https://github.com/alpheus-day/workspace_root.rs"
 license = "MIT"
 keywords = [
     "get",
