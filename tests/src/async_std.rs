@@ -5,7 +5,7 @@ mod tests {
 
     use workspace_root::async_std::get_workspace_root_async;
 
-    #[tokio::test]
+    #[async_std::test]
     async fn test_get_workspace_root() {
         let dir: PathBuf = get_workspace_root_async().await;
 

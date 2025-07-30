@@ -4,6 +4,6 @@ edition = "2024"
 publish = false
 
 [dependencies]
-async-std = { workspace = true }
+async-std = { workspace = true, features = ["attributes"] }
 tokio = { workspace = true, features = ["macros", "rt"] }
 workspace_root = { workspace = true }
