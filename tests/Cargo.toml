@@ -5,5 +5,5 @@ publish = false
 
 [dependencies]
 async-std = { workspace = true }
-tokio = { version = "^1.40.0", features = ["macros", "rt"] }
+tokio = { workspace = true, features = ["macros", "rt"] }
 workspace_root = { workspace = true }
