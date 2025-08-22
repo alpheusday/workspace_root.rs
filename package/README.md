@@ -16,7 +16,7 @@ use workspace_root::get_workspace_root;
 let root: PathBuf = get_workspace_root();
 ```
 
-Async version also available with `async_std` and `tokio` features:
+Async version also available with `async_std`, `smol` and `tokio` features:
 
 ```rust
 // This is a `async_std` example
@@ -24,6 +24,16 @@ Async version also available with `async_std` and `tokio` features:
 use async_std::path::PathBuf;
 
 use workspace_root::async_std::get_workspace_root_async;
+
+let root: PathBuf = get_workspace_root_async().await;
+```
+
+```rust
+// This is a `smol` example
+
+use std::path::PathBuf;
+
+use workspace_root::smol::get_workspace_root_async;
 
 let root: PathBuf = get_workspace_root_async().await;
 ```

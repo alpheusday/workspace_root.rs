@@ -17,7 +17,7 @@ use get_dir::{FileTarget, GetDir, Target, async_std::GetDirAsyncExt as _};
 /// ```
 pub async fn get_workspace_root_directory_async() -> io::Result<PathBuf> {
     GetDir::new()
-        .targets(vec![Target::File(FileTarget { name: "Cargo.lock" })])
+        .target(Target::File(FileTarget::new("Cargo.lock")))
         .run_reverse_async()
         .await
 }

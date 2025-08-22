@@ -27,6 +27,14 @@ fmt:
 test:
     cargo test -p tests -- --nocapture
 
+# Publish package as dry-run
+publish-try:
+    cd ./package && cargo publish --allow-dirty --dry-run
+
+# Publish package
+publish:
+    cd ./package && cargo publish
+
 # Clean up
 clean:
     cargo clean

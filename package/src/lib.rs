@@ -18,7 +18,7 @@
 //! let root: PathBuf = get_workspace_root();
 //! ```
 //!
-//! Async version also available with `async_std` and `tokio` features:
+//! Async version also available with `async_std`, `smol` and `tokio` features:
 //!
 //! ```no_run
 //! // This is a `async_std` example
@@ -26,6 +26,18 @@
 //! use async_std::path::PathBuf;
 //!
 //! use workspace_root::async_std::get_workspace_root_async;
+//!
+//! # async fn example() {
+//! let root: PathBuf = get_workspace_root_async().await;
+//! # }
+//! ```
+//!
+//! ```no_run
+//! // This is a `smol` example
+//!
+//! use std::path::PathBuf;
+//!
+//! use workspace_root::smol::get_workspace_root_async;
 //!
 //! # async fn example() {
 //! let root: PathBuf = get_workspace_root_async().await;
@@ -55,6 +67,17 @@
 #[cfg(feature = "async_std")]
 pub mod async_std;
 
+/// Async functions available with `smol` feature.
+///
+/// To use it, add the following code to the `Cargo.toml` file:
+///
+/// ```toml
+/// [dependencies]
+/// workspace_root = { version = "*", features = ["smol"] }
+/// ```
+#[cfg(feature = "smol")]
+pub mod smol;
+
 /// Async functions available with `tokio` feature.
 ///
 /// To use it, add the following code to the `Cargo.toml` file:
@@ -83,7 +106,7 @@ use get_dir::{FileTarget, GetDir, Target};
 /// ```
 pub fn get_workspace_root_directory() -> io::Result<PathBuf> {
     GetDir::new()
-        .targets(vec![Target::File(FileTarget { name: "Cargo.lock" })])
+        .target(Target::File(FileTarget::new("Cargo.lock")))
         .run_reverse()
 }
 

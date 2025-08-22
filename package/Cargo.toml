@@ -1,6 +1,6 @@
 [package]
 name = "workspace_root"
-version = "0.1.2"
+version = "0.2.0"
 authors = ["Alpheus <contact@alphe.us>"]
 edition = "2024"
 rust-version = "1.85.0"
@@ -30,22 +30,27 @@ include = [
 [package.metadata.docs.rs]
 features = ["all"]
 
+[dependencies.get_dir]
+workspace = true
+optional = true
+
 [dependencies.async-std]
+workspace = true
+optional = true
+
+[dependencies.smol]
 workspace = true
 optional = true
 
 [dependencies.tokio]
 workspace = true
 optional = true
-features = ["fs", "io-util"]
-
-[dependencies.get_dir]
-version = "~0.4.3"
-optional = true
+features = ["io-util"]
 
 [features]
 default = ["get_dir"]
 async_std = ["dep:async-std", "get_dir/async-std"]
 async-std = ["async_std"]
+smol = ["dep:smol", "get_dir/smol"]
 tokio = ["dep:tokio", "get_dir/tokio"]
-all = ["async_std", "tokio"]
+all = ["async_std", "smol", "tokio"]

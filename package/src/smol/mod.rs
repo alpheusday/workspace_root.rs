@@ -1,8 +1,8 @@
 use std::path::PathBuf;
 
-use tokio::io;
+use smol::io;
 
-use get_dir::{FileTarget, GetDir, Target, tokio::GetDirAsyncExt as _};
+use get_dir::{FileTarget, GetDir, Target, smol::GetDirAsyncExt as _};
 
 /// Get the workspace root directory by searching for the `Cargo.lock` file.
 ///
@@ -11,7 +11,7 @@ use get_dir::{FileTarget, GetDir, Target, tokio::GetDirAsyncExt as _};
 /// ```no_run
 /// use std::path::PathBuf;
 ///
-/// use workspace_root::tokio::get_workspace_root_directory_async;
+/// use workspace_root::smol::get_workspace_root_directory_async;
 ///
 /// # async fn example() {
 /// let root: PathBuf = get_workspace_root_directory_async().await.unwrap();
@@ -31,7 +31,7 @@ pub async fn get_workspace_root_directory_async() -> io::Result<PathBuf> {
 /// ```no_run
 /// use std::path::PathBuf;
 ///
-/// use workspace_root::tokio::get_workspace_root_async;
+/// use workspace_root::smol::get_workspace_root_async;
 ///
 /// # async fn example() {
 /// let root: PathBuf = get_workspace_root_async().await;

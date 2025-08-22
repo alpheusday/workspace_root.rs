@@ -1,3 +1,13 @@
+## 0.2.0
+
+### What's New
+
+- Add support for `smol` (require `smol` feature)
+
+### What's Changed
+
+- Update `get_dir`
+
 ## 0.1.2 (2025-05-28)
 
 ### What's Changed
