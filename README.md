@@ -56,6 +56,10 @@ use workspace_root::tokio::get_workspace_root_async;
 let root: PathBuf = get_workspace_root_async().await;
 ```
 
+## Contributing
+
+For contributing, please refer to the [contributing guide](./CONTRIBUTING.md).
+
 ## License
 
 This project is licensed under the terms of the MIT license.
